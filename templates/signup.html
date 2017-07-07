@@ -1,39 +1,37 @@
 {% extends "base.html" %}
 
 {% block content %}
-<h1>Signup</h1>
-    <table>
-        <tr>
-            <td><label for="Username">Username</label>
-            </td>
-            <td>
-                <input name="username" type="username" value="{{ username }}">
-            </td>
-        </tr>
 
-        <tr>
-            <td><label for="Password">Password</label>
-            </td>
-            <td>
-                <input name="password" type="password" value="{{ password }}">
-                </tr>
 
-        <tr>
-            <td><label for="verify_password">Verify Password</label></td>
-            <td>
-                <input name="verify_password" type="verify_password">
-            </td>
-        </tr>
+      
+<h1>Sign up</h1>
+<form method='post'action="/" style="display:inline-block;">
 
-            <tr>
-            <td><label for="email">Email (optional)</label></td>
-            <td>
-                <input name="email" type="email" value="{{ email }}">
-            </td>
-        </tr>
+    
+    <label><b>Username</b></label>
+    <input type="text" placeholder="Enter username" name="username" required>
+    <input type="hidden" name="username" value={{username}} />
 
-        
-    </table>
-    <input type="submit" value="Submit">
-</form>
+
+    <label><b>Password</b></label>
+    <input type="text" placeholder="Enter Password" name="password" required>
+    <input type="hidden" name="password" value={{username}} />
+
+
+    <label><b>Repeat Password</b></label>
+    <input type="text" placeholder="Repeat Password" name="verify-password" required>
+    <input type="hidden" name="verify-password" value={{verify_password}} />
+
+
+    <label><b>Email</b></label>
+    <input type="text" placeholder="Enter Email" name="email" required>
+    <input type="hidden" name="email" value={{email}} />
+
+
+ <div class="clearfix">
+      <button type="submit" class="signupbtn">Sign Up</button>
+ </div>
+   
+
+</form> 
 {% endblock %}
