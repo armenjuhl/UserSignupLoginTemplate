@@ -25,9 +25,6 @@ def require_login():
     if request.endpoint not in allowed_routes and 'username' not in session:
         return redirect('/')
 """
-#    if request.endpoint not in allowed_routes and 'email' not in session:
-#if email hasnt been added to session #dictionary meaning if user hasnt logged in yet. The #endpoint is the given path meaning if it isnt login or #register(allowed routes) 
-#        return redirect('/signup')
 
 
 @app.route('/', methods=['POST', 'GET'])
@@ -88,37 +85,3 @@ def welcomePage():
 
 if __name__ == '__main__':
     app.run()
-
-
-
-
-
-
-     
-        #return redirect('/welcome')
-        #else:
-            #flash('User password is incorrect, or user does not exist', 'error') 
-
-
-
-#@app.route('/welcome'), methods=['POST', 'GET']
-#def welcome():
-#    return render_template('welcome.html')
-
-
-    
-
-    #if request.method == 'POST':
-        #task_name = request.form['task']
-        #new_task = Task(task_name, owner)
-        #db.session.add(new_task)
-        #db.session.commit()
-        #must commit an add like in git
-        #no need to give an ID- sql alchemy knows every item needs one and we set it up above with id
-
-
-
-    
-
-
-    #shields the app.run from any code so its only run when you run the main.py file directly. when importing objects or classes into other apps and files this allows you to do this without having it add up (because they will probably have the an app.run and __main__ as well)
